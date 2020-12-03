@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firma de documentos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Actividad de firma de documentos</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+      Selecciona documento a firmar;
+      <input type="file" name="doc" id="doc">
+      <br/>
+      <input type="submit" value="Subir" name="submit">
+    </form>
+    <% if (locals.error) { %>
+      <span><%= locals.error %></span>
+    <% } %>
+    <% if (locals.messages) { %>      
+      <% locals.messages.forEach(function(msg) { %>
+          <p>
+              <span><%= msg %></span>
+          </p>
+      <% }); %>
+    <% } %>
+  </body>
+</html>
